@@ -2,7 +2,7 @@
 
 Seamless navigation between Neovim and [Ghostty](https://ghostty.org) splits using `Ctrl+hjkl`. Inspired by [vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator).
 
-<video src="https://github.com/tmm/ghostty-navigator.nvim/raw/main/.github/demo.mp4"></video>
+https://github.com/user-attachments/assets/5263c2e4-1f27-4dc5-8136-f548d5f67747
 
 ## Install
 
@@ -46,6 +46,9 @@ Press Ctrl+h (Ghostty is focused)
 ```
 
 Navigation works in normal mode and terminal mode (`:terminal` buffers).
+
+> [!NOTE]
+> Ghostty's keybindings can trigger actions like `goto_split`, but can't conditionally execute based on the process running in the focused terminal. The [AppleScript API](https://ghostty.org/docs/features/applescript) is only available for external automation. The daemon bridges this gap by intercepting `Ctrl+hjkl` via a `CGEventTap` and deciding whether to pass the key through to Neovim or call `goto_split` via AppleScript.
 
 ## Configuration
 
